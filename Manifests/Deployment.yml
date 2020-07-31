@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aksjv-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: aksjv-pod
+  template:
+    metadata:
+      labels:
+        app: aksjv-pod
+    spec:
+      containers:
+      - name: aksjv-container
+        image: pluralcontainers.azurecr.io/aks-jv:remote-v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

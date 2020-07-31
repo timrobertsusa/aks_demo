@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aksjv-service
+spec:
+  selector:
+    app: aksjv-pod
+  ports:
+  - port: 8080
+    targetPort: 80
+  type: LoadBalancer
