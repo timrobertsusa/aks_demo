@@ -1,0 +1,10 @@
+az aks get-credentials --resource-group plural-rg --name AksJv
+
+
+kubectl apply -f Deployment.yml
+
+
+
+kubectl apply -f Services.yml
+
+
